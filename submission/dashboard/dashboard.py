@@ -117,8 +117,8 @@ def plot_rentals_by_day_type(df):
     return fig
 
 # Load Data
-daily_data = pd.read_csv("daily_clean.csv")
-hourly_data = pd.read_csv("hourly_clean.csv")
+daily_data = pd.read_csv("submission/dashboard/daily_clean.csv")
+hourly_data = pd.read_csv("submission/dashboard/hourly_clean.csv")
 
 datetime_columns = ["Date"]
 daily_data.sort_values(by="Date", inplace=True)
@@ -138,7 +138,7 @@ min_date_hour = hourly_data["Date"].min()
 max_date_hour = hourly_data["Date"].max()
 
 with st.sidebar:
-    st.image("logo.png")
+    st.image("submission/dashboard/logo.png")
     start_date, end_date = st.date_input(
         label="Rentang Waktu",
         min_value=min_date_days,
